@@ -4,7 +4,7 @@ const Navbar=({onSearch,cartItemCount})=>{
     const [searchQuery, setSearchQuery] = useState("");
     const handleSubmit =() => {
         if (searchQuery.trim().length){
-            onSearch(searchQuery.trim( ));  //send the search query to parent component for further processing
+            onSearch(searchQuery.trim());  //send the search query to parent component for further processing
         }
         setSearchQuery("")
     }
@@ -14,7 +14,7 @@ const Navbar=({onSearch,cartItemCount})=>{
                 <div className="header py-2">
                     <div className="grid">
                         <Link to ="/" className="link">
-                            <h1 className="brand"> E-commerece</h1>
+                            <h1 className="brand"> E@cart</h1>
                         </Link>
                         <div className="formContainer">
                             <form className="search">

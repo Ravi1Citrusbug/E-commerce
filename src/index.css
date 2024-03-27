@@ -258,6 +258,7 @@ img {
 .brand {
   justify-self: start;
   justify-content: start;
+  font-size: larger;
   font-weight: 700;
 }
 
@@ -364,9 +365,9 @@ input[type="text"] {
   -webkit-animation: spin 1s linear infinite;
 }
 
-/* .products {
+.products {
 	margin: 4rem 0;
-} */
+}
 
 .products .grid {
   grid-template-columns: repeat(4, 1fr);
@@ -378,17 +379,17 @@ input[type="text"] {
   justify-self: center;
 }
 
-/* .products .flex {
+ .products .flex {
 	justify-content: space-around;
 	flex-wrap: wrap;
-} */
-/* 
+} 
+
 .card .grid {
 	grid-template-columns: 1fr;
 	gap: 30px;
 	grid-auto-rows: 150px 50px 30px;
 	text-overflow: ellipsis;
-} */
+} 
 
 .card .flex {
   justify-content: space-between;

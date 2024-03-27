@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
-const Item =({data,addToCart})=>{
-    const {id,image,title,price} = data;
+
+import { Link } from "react-router-dom"
+
+const Item = ({ data, addToCart }) => {
+
+    const { id, image, title, price } = data
+
     return (
         <div className="card">
-           <div className="grid">
+            <div className="grid">
                 <div className="image">
                     <img src={image} alt="" />
                 </div>
@@ -14,15 +18,15 @@ const Item =({data,addToCart})=>{
                 </div>
                 <div className="flex">
                     <span className="price" style={{ marginRight: 15 }}>
-                        ${price}
+                    ₹{price}
                     </span>
                     <div className="cart" onClick={addToCart}>
-                        <img className="cartImg" src="/cart.svg" alt="img" />
+                        <img className="cartImg" src="/cart.svg" alt="" />
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
- export default Item;
+
+export { Item }

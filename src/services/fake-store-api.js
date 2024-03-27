@@ -1,19 +1,19 @@
 const FakeStoreApi = {
     fetchAllProducts : async ()=>{
-        res = await fetch('https://fakestoreapi.tech/products')
-        result = res.json()
+        const res = await fetch('https://fakestoreapi.com/products')
+        const result = await res.json()
         return result
     },
     fetchProductById : async (productId)=>{
-        res = await fetch(`https://fakestoreapi.tech/products/${productId}`)
-        result = res.json()
+        const res = await fetch(`https://fakestoreapi.com/products/${productId}`)
+        const result = await res.json()
         return result
 
     },
     fetchProductBySearchQuery : async (query) => {
-        res = await fetch(`https://fakestoreapi.tech/products`)
-        result = res.json()
+        const res = await fetch("https://fakestoreapi.com/products")
+        const result = await res.json()
         return  result.filter((product)=>product.title.toLowerCase().includes(query))
     }
 }
-export default FakeStoreApi
+export { FakeStoreApi };
