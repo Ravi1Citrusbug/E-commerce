@@ -1,9 +1,14 @@
 
 import { Link } from "react-router-dom"
+import { toast } from 'react-toastify';
 
 const Item = ({ data, addToCart }) => {
 
     const { id, image, title, price } = data
+    const handleAddToCart = () => {
+        addToCart();
+        toast.success("Successfully Added to cart");
+    }
 
     return (
         <div className="card">
@@ -20,8 +25,8 @@ const Item = ({ data, addToCart }) => {
                     <span className="price" style={{ marginRight: 15 }}>
                     ₹{price}
                     </span>
-                    <div className="cart" onClick={addToCart}>
-                        <img className="cartImg" src="/cart.svg" alt="" />
+                    <div className="cart" onClick={handleAddToCart}>
+                        <img  className="cartImg" src="/cart.svg" alt="" />
                     </div>
                 </div>
             </div>

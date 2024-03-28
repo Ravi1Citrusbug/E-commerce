@@ -3,9 +3,11 @@ import './product.css'
 import { useState,useEffect } from "react"
 import { FakeStoreApi } from "../../services/fake-store-api"
 import { Link ,useParams } from "react-router-dom"
+import { useCart } from '../../context/cart'
 const Product =()=>{
     const [loading ,setLoading] = useState(true);
     const [product,setProduct] = useState([]);
+    const { addToCart } = useCart()
     console.log(useParams())
     const { productId }  = useParams();
      useEffect(()=>{
@@ -47,7 +49,7 @@ const Product =()=>{
                             </div>
                             <div className="flex">
                                 <span className="price">₹{product.price}</span>
-                                <span className="cart" onClick={()=>{}}>
+                                <span className="cart" onClick={()=>addToCart(product)}>
                                     <img src="/cart.svg" alt="img" />
                                 </span>
                             </div>
