@@ -33,6 +33,7 @@ const Product =()=>{
         )
      }
     return (
+       <>
         <div className="container">
             {
                 loading ? (<div className={'loader'}></div>) : 
@@ -61,6 +62,7 @@ const Product =()=>{
                 )
             }
         </div>
+       </>
     )
 
 }

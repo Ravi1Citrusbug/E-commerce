@@ -3,10 +3,11 @@ import { Item } from  '../../components/item/item'
 import { FakeStoreApi } from "../../services/fake-store-api"
 import { useSearchParams } from "react-router-dom"
 import { useCart } from "../../context/cart"
+import Advertisement from '../../components/advertisement/advertisement'
 const Products =()=>{
     const [loading ,setLoading] = useState(true);
     const [products,setProducts] = useState([]);
-    const [query,setQuery] = useSearchParams();
+    const [query] = useSearchParams();
     const searchQuery= query.get("q");
     const { addToCart } = useCart()
     useEffect(()=>{
@@ -31,7 +32,9 @@ const Products =()=>{
         )
     }
     return (
-        <>
+        <>  
+     {!searchQuery && <Advertisement />}
+
         <div className="container">
             <div className="products my-5">
                 <div className="grid">

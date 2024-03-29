@@ -10,6 +10,7 @@ import Footer from './components/footer/footer';
 
 
 
+
 function App() {
   const navigate = useNavigate();
   const onSearch = (searchQuery)=>{
