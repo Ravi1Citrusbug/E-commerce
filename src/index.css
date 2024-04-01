@@ -20,13 +20,13 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
-/* .fix
+.fix
 {
 position: fixed;
 width: 100%;
 z-index: 1;
 top:0;
-} */
+}
 img {
   width: 100%;
   height: 100%;
@@ -51,11 +51,11 @@ img {
 }
 
 .card {
-  /* flex: 2 1 200px;*/
+  /* flex: 2 1 200px; */
   height: auto;
   width: auto;
   padding: 20px;
-  /* margin: 20px; */
+  margin: 20px;
   box-shadow: rgb(189, 189, 192) 0px 15px 15px -5px;
   border-radius: 20px;
   background-color: #fff;
@@ -174,6 +174,9 @@ img {
 }
 
 /* Margin */
+.mar-res{
+  margin-top: calc(96px + 0px);
+}
 
 .m-1 {
   margin: 1rem;
@@ -466,7 +469,9 @@ img {
   -ms-transform: scaleX(-1);
   -o-transform: scaleX(-1);
 }
-
+.nav-trans{
+  transition: all 5s ease;
+}
 @media (max-width: 895px) {
   .formContainer {
     width: 100%;
@@ -487,8 +492,12 @@ img {
 
 @media (max-width: 695px) {
   .formContainer {
-    max-width: 100%;
+    max-width: 100%;  
   }
+  .mar-res{
+    margin-top: calc(156px + 0px);
+  }
+  
 
   .wrapper .grid {
     grid-template-columns: 1fr 1fr;

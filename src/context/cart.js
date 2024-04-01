@@ -17,6 +17,7 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState(initialState.cart)
 
     const cartItemCount = () => {
+        console.log(cart)
         return cart.reduce((acc, item) => acc + item.quantity, 0)
     }
 
@@ -39,6 +40,7 @@ const CartProvider = ({ children }) => {
         if (productIdx !== -1) {
             copy[productIdx].quantity += 1
             setCart(copy)
+            console.log(copy)
         }
     }
 

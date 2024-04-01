@@ -1,7 +1,28 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
+
+
 const Navbar=({onSearch,cartItemCount})=>{
     const [searchQuery, setSearchQuery] = useState("");
+    const [hasScrolled, setHasScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+          if (!hasScrolled) {
+            setHasScrolled(true);
+          }
+        };
+    
+        // Add scroll event listener when component mounts
+        window.addEventListener('scroll', handleScroll);
+        
+        // Clean up the event listener when the component unmounts
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, [hasScrolled]); 
+
+    
     const handleSubmit =() => {
         if (searchQuery.trim().length){
             onSearch(searchQuery.trim());  //send the search query to parent component for further processing
@@ -9,7 +30,8 @@ const Navbar=({onSearch,cartItemCount})=>{
         setSearchQuery("")
     }
     return (
-        <div className="wrapper">
+        <div className={`.nav-trans ${hasScrolled ? 'fix' : ''}`}>
+            <div className="wrapper">
             <header className="container">
                 <div className="header py-2">
                     <div className="grid">
@@ -34,6 +56,7 @@ const Navbar=({onSearch,cartItemCount})=>{
                 </div>
 
             </header>
+        </div>
         </div>
     )
 

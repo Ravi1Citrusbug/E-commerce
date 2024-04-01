@@ -34,7 +34,7 @@ const Product =()=>{
      }
     return (
        <>
-        <div className="container">
+        <div className="container mar-res">
             {
                 loading ? (<div className={'loader'}></div>) : 
                 (

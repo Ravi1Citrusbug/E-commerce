@@ -20,7 +20,7 @@ const Cart = () => {
     }
 
     return (
-        <div className="cartWrapper">
+        <div className="cartWrapper mar-res">
             <div className="container">
                 {cart.length >= 1 ? (
                     <div className="grid my-5">
@@ -44,6 +44,7 @@ const Cart = () => {
                                             <div>
                                                 <button
                                                     onClick={() => increaseQuantity(item.product.id)}
+                                                    
                                                     className="addQty"
                                                 >
                                                     +
@@ -82,7 +83,7 @@ const Cart = () => {
                                     <span>Shipping Fee:</span>
                                     <span className="price">₹{SHIPPING_CHARGES}</span>
                                 </div>
-                                <div className=" flex py-1">
+                                <div className=" summary flex py-1">
                                     <span>Total:</span>
                                     <span className="price">₹{round(cartTotal() + SHIPPING_CHARGES, 2)}</span>
                                 </div>

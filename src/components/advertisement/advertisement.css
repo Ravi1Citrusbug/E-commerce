@@ -10,7 +10,7 @@
     user-select: none;
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
-    /* width: 100vw; */
+  
   }
   
   .slick-list {
@@ -29,13 +29,11 @@
   
   .slick-slide img {
     width: 100%;
-    height: 400px; /* Set the height to 500px */
+    max-height: 650px; 
     object-fit: cover;
-    /* object-fit: contain; */
     overflow: hidden;
     object-position: center;
-
-
+    margin-top: calc(96px + 0px) !important;
   }
   
   /* Dots styles */
@@ -71,4 +69,24 @@
   .slick-dots li.slick-active button {
     background: #007bff;
   }
+.add {
+  border-radius: 50px;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1000px) {
+  /* CSS rules to be applied for screens 1000px wide and above */
+  .add-last {
+    object-position: top !important ;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 695px) {
+  .slick-slide img{
+    margin-top: calc(156px + 0px) !important;
+
+  }
   
+}

@@ -14,19 +14,21 @@ const Carousel = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 1000, // Set autoplay speed to 1 second (1000 milliseconds)
   };
 
   return (
 
-      <Slider {...settings}>
-      <div>
+      <Slider className='x' {...settings}>
+      <div >
         <img src={img1} alt="Image 1" />
       </div>
       <div>
         <img src={img2} alt="Image 2" />
       </div>
-      <div>
-        <img src={img3} alt="Image 3" />
+      <div >
+        <img className="add-last" src={img3} alt="Image 3" />
       </div>
     </Slider>
   
