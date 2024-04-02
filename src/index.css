@@ -27,6 +27,9 @@ width: 100%;
 z-index: 1;
 top:0;
 }
+.nav-trans{
+  transition: all 5s ease-in-out;
+}
 img {
   width: 100%;
   height: 100%;
@@ -469,9 +472,7 @@ img {
   -ms-transform: scaleX(-1);
   -o-transform: scaleX(-1);
 }
-.nav-trans{
-  transition: all 5s ease;
-}
+
 @media (max-width: 895px) {
   .formContainer {
     width: 100%;

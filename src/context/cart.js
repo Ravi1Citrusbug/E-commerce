@@ -17,8 +17,8 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState(initialState.cart)
 
     const cartItemCount = () => {
-        console.log(cart)
-        return cart.reduce((acc, item) => acc + item.quantity, 0)
+        console.log(cart.length)
+        return cart.length
     }
 
     const addToCart = (product) => {

@@ -42,20 +42,21 @@ const Cart = () => {
                                         </div>
                                         <div className="itemControl flex">
                                             <div>
-                                                <button
-                                                    onClick={() => increaseQuantity(item.product.id)}
-                                                    
-                                                    className="addQty"
-                                                >
-                                                    +
-                                                </button>
-                                                <span className="mx-1">{item.quantity}</span>
+                            
                                                 <button
                                                     onClick={() => decreaseQuantity(item.product.id)}
                                                     disabled={item.quantity === 1}
                                                     className="removeQty"
                                                 >
                                                     -
+                                                </button>
+                                                <span className="mx-1">{item.quantity}</span>
+                                                <button
+                                                    onClick={() => increaseQuantity(item.product.id)}
+                                                    
+                                                    className="addQty"
+                                                >
+                                                    +
                                                 </button>
                                                 <div
                                                     className="remove my-1"

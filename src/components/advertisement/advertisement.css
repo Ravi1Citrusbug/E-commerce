@@ -75,14 +75,6 @@
   overflow: hidden;
 }
 
-@media screen and (min-width: 1000px) {
-  /* CSS rules to be applied for screens 1000px wide and above */
-  .add-last {
-    object-position: top !important ;
-    object-fit: cover;
-  }
-}
-
 @media screen and (max-width: 695px) {
   .slick-slide img{
     margin-top: calc(156px + 0px) !important;

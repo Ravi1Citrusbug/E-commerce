@@ -30,7 +30,7 @@ const Navbar=({onSearch,cartItemCount})=>{
         setSearchQuery("")
     }
     return (
-        <div className={`.nav-trans ${hasScrolled ? 'fix' : ''}`}>
+        <div className={`fix ${hasScrolled ? 'fix' : ''} `}>
             <div className="wrapper">
             <header className="container">
                 <div className="header py-2">
