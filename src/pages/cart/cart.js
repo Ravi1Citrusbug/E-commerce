@@ -4,6 +4,7 @@ import "./cart.css"
 import { toast } from 'react-toastify';
 
 const SHIPPING_CHARGES = 25
+const DISCOUNT_PRICE = 10
 
 const Cart = () => {
     const handleRemoveToCart = () => {
@@ -76,9 +77,27 @@ const Cart = () => {
                         <div className="payment p-3">
                             <h2>Payment Summary</h2>
                             <div className="summary py-3 my-2">
+                                <div >
+                                    {
+                                        cart.map(({ product,quantity }) => {
+                                            console.log(product.title);
+                                            return (
+                                                <div className="summary-b" key={product.id}>
+                                                    <div>{product.title}</div>
+                                                    <div className="price">{`${quantity} x ${product.price} = ${quantity*product.price}`}</div>
+                                                    </div>
+                                            )
+
+                                        })
+                                    }
+                                </div>
                                 <div className="flex py-1">
                                     <span>Subtotal:</span>
                                     <span className="price">₹{round(cartTotal(), 2)}</span>
+                                </div>
+                                <div className="flex py-1">
+                                    <span>Discount price</span>
+                                    <span className="discount">- ₹{ DISCOUNT_PRICE }</span>
                                 </div>
                                 <div className="flex py-1">
                                     <span>Shipping Fee:</span>
@@ -86,7 +105,7 @@ const Cart = () => {
                                 </div>
                                 <div className=" summary flex py-1">
                                     <span>Total:</span>
-                                    <span className="price">₹{round(cartTotal() + SHIPPING_CHARGES, 2)}</span>
+                                    <span className="price">₹{round((cartTotal() + SHIPPING_CHARGES) - DISCOUNT_PRICE, 2)}</span>
                                 </div>
                             </div>
                         </div>

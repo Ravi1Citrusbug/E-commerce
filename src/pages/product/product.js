@@ -4,6 +4,10 @@ import { useState,useEffect } from "react"
 import { FakeStoreApi } from "../../services/fake-store-api"
 import { Link ,useParams } from "react-router-dom"
 import { useCart } from '../../context/cart'
+import { toast } from 'react-toastify';
+
+
+
 const Product =()=>{
     const [loading ,setLoading] = useState(true);
     const [product,setProduct] = useState([]);
@@ -20,6 +24,10 @@ const Product =()=>{
         }
         fetchProduct().catch(console.error);
      },[productId])
+     const handleAddToCart = () => {
+        addToCart(product);
+        toast.success("Successfully Added to cart");
+    }
 
      if(!loading && !product){
         return (  
@@ -50,7 +58,7 @@ const Product =()=>{
                             </div>
                             <div className="flex">
                                 <span className="price">₹{product.price}</span>
-                                <span className="cart" onClick={()=>addToCart(product)}>
+                                <span className="cart"  onClick={handleAddToCart}>
                                     <img src="/cart.svg" alt="img" />
                                 </span>
                             </div>

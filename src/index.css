@@ -27,6 +27,12 @@ width: 100%;
 z-index: 1;
 top:0;
 }
+.discount{
+  color:green;
+  font-family: sans-serif;
+  font-weight: 600;
+
+}
 .nav-trans{
   transition: all 5s ease-in-out;
 }
