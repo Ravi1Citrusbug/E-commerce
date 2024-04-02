@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom"
 import { toast } from 'react-toastify';
 
@@ -8,6 +7,11 @@ const Item = ({ data, addToCart }) => {
     const handleAddToCart = () => {
         addToCart();
         toast.success("Successfully Added to cart");
+    }
+
+    const handleBuyNow = () => {
+        // Handle the action when "Buy Now" is clicked
+        toast.info("Nice choice");
     }
 
     return (
@@ -22,13 +26,19 @@ const Item = ({ data, addToCart }) => {
                     </Link>
                 </div>
                 <div className="flex">
+                    <div>
                     <span className="price" style={{ marginRight: 15 }}>
-                    ₹{price}
+                        ₹{price}
                     </span>
-                    <div className="cart" onClick={handleAddToCart}>
-                        <img  className="cartImg" src="/cart.svg" alt="" />
                     </div>
+                    <div className="buttons flex no-wrap">
+                        <div className="cart" onClick={handleAddToCart}>
+                            <img className="cartImg" src="/cart.svg" alt="" />
+                        </div>
+                        <button className="buyNowBtn" onClick={handleBuyNow}>Buy Now</button>
+                    </div>    
                 </div>
+                
             </div>
         </div>
     )

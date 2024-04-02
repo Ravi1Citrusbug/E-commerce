@@ -36,6 +36,10 @@ top:0;
 .nav-trans{
   transition: all 5s ease-in-out;
 }
+.no-wrap
+{
+  flex-wrap: nowrap !important;
+}
 img {
   width: 100%;
   height: 100%;
@@ -400,12 +404,13 @@ input[type="text"] {
  .products .flex {
 	justify-content: space-around;
 	flex-wrap: wrap;
+  gap:3px;
 } 
 
 .card .grid {
 	grid-template-columns: 1fr;
-	gap: 30px;
-	grid-auto-rows: 150px 50px 30px;
+	gap: 10px;
+	grid-auto-rows: 150px 50px 100px;
 	text-overflow: ellipsis;
 } 
 
@@ -470,6 +475,10 @@ img {
   -o-border-radius: 50%;
   cursor: pointer;
 }
+.cart:hover
+{
+  background-color: #0056b3;
+}
 
 .cartImg {
   transform: scaleX(-1);
@@ -478,6 +487,34 @@ img {
   -ms-transform: scaleX(-1);
   -o-transform: scaleX(-1);
 }
+
+
+/* Add this CSS below your existing CSS code */
+
+.buyNowBtn {
+  background-color: #007fff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buyNowBtn:hover {
+  background-color: #0056b3; /* Darker shade of blue */
+}
+
+/* Responsive Styling */
+
+@media (max-width: 500px) {
+  .buyNowBtn {
+    width: 100%;
+    margin-top: 10px; /* Adjust as needed */
+  }
+}
+
+
 
 @media (max-width: 895px) {
   .formContainer {
