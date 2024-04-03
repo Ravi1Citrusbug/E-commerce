@@ -1,9 +1,9 @@
 import './product.css'
 
 import { useState,useEffect } from "react"
-import { FakeStoreApi } from "../../services/fake-store-api"
+import { FakeStoreApi } from "../../../services/fake-store-api"
 import { Link ,useParams } from "react-router-dom"
-import { useCart } from '../../context/cart'
+import { useCart } from '../../../context/cart'
 import { toast } from 'react-toastify';
 
 
@@ -12,7 +12,6 @@ const Product =()=>{
     const [loading ,setLoading] = useState(true);
     const [product,setProduct] = useState([]);
     const { addToCart } = useCart()
-    console.log(useParams())
     const { productId }  = useParams();
      useEffect(()=>{
         const fetchProduct = async ()=>{

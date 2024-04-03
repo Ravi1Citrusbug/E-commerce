@@ -12,6 +12,7 @@ const Item = ({ data, addToCart }) => {
     const handleBuyNow = () => {
         // Handle the action when "Buy Now" is clicked
         toast.info("Nice choice");
+
     }
 
     return (
@@ -35,7 +36,7 @@ const Item = ({ data, addToCart }) => {
                         <div className="cart" onClick={handleAddToCart}>
                             <img className="cartImg" src="/cart.svg" alt="" />
                         </div>
-                        <button className="buyNowBtn" onClick={handleBuyNow}>Buy Now</button>
+                        <Link to = "/buynow" state={data} ><button className="buyNowBtn" onClick={ handleBuyNow }>Buy Now</button></Link>
                     </div>    
                 </div>
                 

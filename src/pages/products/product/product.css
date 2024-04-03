@@ -34,7 +34,7 @@
 .card .grid {
     grid-template-columns: 1fr;
     gap: 10px;
-    grid-template-rows: 200px 50px 100px;
+    grid-template-rows: 171px 46px 100px;
     text-overflow: ellipsis;
 }
 

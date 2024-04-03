@@ -80,7 +80,6 @@ const Cart = () => {
                                 <div >
                                     {
                                         cart.map(({ product,quantity }) => {
-                                            console.log(product.title);
                                             return (
                                                 <div className="summary-b" key={product.id}>
                                                     <div>{product.title}</div>
