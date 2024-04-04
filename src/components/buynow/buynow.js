@@ -1,4 +1,4 @@
-import React from 'react'
+import { React,useState } from 'react'
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom"
 import "../../../src/pages/cart/cart.css"
@@ -11,6 +11,7 @@ const DISCOUNT_PRICE = 10
 function Buynow () {
     const location = useLocation();
     const receivedData = location.state;
+    const  [quantity, setQuantity] = useState(1);
    
     const round = (value, decimals) => {
         return Number(Math.round(value + "e" + decimals) + "e-" + decimals)
@@ -33,21 +34,21 @@ function Buynow () {
                                             {receivedData.title}
                                         </Link>
                                     </div>
-                                    <span className="price">₹{round(receivedData.price * 1, 2)}</span>
+                                    <span className="price">₹{round(receivedData.price , 2)}</span>
                                 </div>
                                 <div className="itemControl flex">
                                     <div>
                     
                                         <button
-                                            onClick={() => {}}
-                                            disabled={receivedData.quantity === 1}
+                                            onClick={() => setQuantity(quantity - 1)}
+                                            disabled={quantity === 1}
                                             className="removeQty"
                                         >
                                             -
                                         </button>
-                                        <span className="mx-1">{1}</span>
+                                        <span className="mx-1">{quantity}</span>
                                         <button
-                                            onClick={() => { }}
+                                            onClick={() => setQuantity(quantity + 1) }
                                             
                                             className="addQty"
                                         >
@@ -65,12 +66,12 @@ function Buynow () {
                         <div >
                             <div className="summary-b" key={receivedData.id}>
                                 <div>{receivedData.title}</div>
-                                <div className="price">{`${1} x ${receivedData.price} = ${1 * receivedData.price}`}</div>
+                                <div className="price">{`${quantity} x ${receivedData.price} = ${receivedData.price * quantity}`}</div>
                             </div>
                         </div>
                         <div className="flex py-1">
                             <span>Subtotal:</span>
-                            <span className="price">₹{round(receivedData.price * 1, 2)}</span>
+                            <span className="price">₹{round(receivedData.price * quantity, 2)}</span>
                         </div>
                         <div className="flex py-1">
                             <span>Discount price</span>
@@ -82,7 +83,7 @@ function Buynow () {
                         </div>
                         <div className=" summary flex py-1">
                             <span>Total:</span>
-                            <span className="price">₹{round((receivedData.price + SHIPPING_CHARGES) - DISCOUNT_PRICE, 2)}</span>
+                            <span className="price">₹{round(((receivedData.price *quantity )+ SHIPPING_CHARGES) - DISCOUNT_PRICE, 2)}</span>
                         </div>
                     </div>
                 </div>

@@ -19,7 +19,6 @@ const Cart = () => {
     const round = (value, decimals) => {
         return Number(Math.round(value + "e" + decimals) + "e-" + decimals)
     }
-
     return (
         <div className="cartWrapper mar-res">
             <div className="container">
@@ -28,6 +27,7 @@ const Cart = () => {
                         <div className="cartItem p-3">
                             <h2>Order Summary</h2>
                             {cart.map((item) => (
+                                
                                 <div className="item" key={item.product.id}>
                                     <div className="grid py-3">
                                         <div className="itemImage">
@@ -68,6 +68,7 @@ const Cart = () => {
                                                 >
                                                     Remove
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                     </div>

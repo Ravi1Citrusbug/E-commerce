@@ -10,8 +10,6 @@ import Footer from './components/footer/footer';
 import Buynow from './components/buynow/buynow';
 
 
-
-
 function App() {
   const navigate = useNavigate();
   const onSearch = (searchQuery)=>{
