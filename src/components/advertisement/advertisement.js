@@ -27,7 +27,7 @@ const Carousel = () => {
         <img src={img2} alt="Image 2" />
       </div>
       <div >
-        <img className="add-last" src={img3} alt="Image 3" />
+        <img  src={img3} alt="Image 3" />
       </div>
     </Slider>
   

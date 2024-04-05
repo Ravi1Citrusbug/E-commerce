@@ -60,7 +60,7 @@ const Cart = () => {
                                                     +
                                                 </button>
                                                 <div
-                                                    className="remove my-1"
+                                                    className="remove my-05"
                                                     onClick={() => {
                                                         handleRemoveToCart()
                                                         removeFromCart(item.product.id)
@@ -68,6 +68,7 @@ const Cart = () => {
                                                 >
                                                     Remove
                                                 </div>
+                                                <Link to = "/buynow" state={{...item.product}} ><button className="buyNowBtn">Buy Now</button></Link>
                                                 
                                             </div>
                                         </div>
@@ -87,7 +88,6 @@ const Cart = () => {
                                                     <div className="price">{`${quantity} x ${product.price} = ${quantity*product.price}`}</div>
                                                     </div>
                                             )
-
                                         })
                                     }
                                 </div>

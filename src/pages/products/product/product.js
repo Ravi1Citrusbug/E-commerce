@@ -5,6 +5,7 @@ import { FakeStoreApi } from "../../../services/fake-store-api"
 import { Link ,useParams } from "react-router-dom"
 import { useCart } from '../../../context/cart'
 import { toast } from 'react-toastify';
+import { Item } from '../../../components/item/item'
 
 
 
@@ -27,7 +28,6 @@ const Product =()=>{
         addToCart(product);
         toast.success("Successfully Added to cart");
     }
-
      if(!loading && !product){
         return (  
             <div className="container">
@@ -39,6 +39,19 @@ const Product =()=>{
             </div>
         )
      }
+
+    //  logic for similar products
+    const all = async() =>{
+        const allProduct = await FakeStoreApi.fetchAllProducts()
+    }
+
+    
+    
+    const searchedProduct = product.title
+    console.log(searchedProduct)
+
+
+
     return (
        <>
         <div className="container mar-res">
@@ -62,13 +75,23 @@ const Product =()=>{
                                 </span>
                             </div>
                         </div>
-
+                        <Link to = "/buynow" state={product} ><button className="buyNowBtn">Buy Now</button></Link>
                     </div>
-
                   </div>
                 )
             }
         </div>
+        {/* <div className="products my-5">
+                    <div className="grid">
+                        {loading ? (
+                            <div className="loading"></div>
+                        ) : (
+                            similarProducts.map((product) => (
+                                <Item key={product.id} data={product} addToCart={() => addToCart(product)} />
+                            ))
+                        )}
+                    </div>
+                </div> */}
        </>
     )
 

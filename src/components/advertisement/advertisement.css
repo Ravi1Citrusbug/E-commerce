@@ -69,11 +69,6 @@
   .slick-dots li.slick-active button {
     background: #007bff;
   }
-.add {
-  border-radius: 50px;
-  max-width: 100vw;
-  overflow: hidden;
-}
 
 
 @media screen and (max-width: 695px) {

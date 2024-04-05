@@ -5,8 +5,8 @@ footer {
 }
 
 .fc-container {
-    width: 90%; /* Changed to percentage for responsiveness */
-    max-width: 1140px; /* Added max-width for larger screens */
+    width: 90%; 
+    max-width: 1140px; 
     margin: auto;
     display: flex;
     justify-content: center;
@@ -14,8 +14,8 @@ footer {
 }
 
 .fc-footer-content {
-    width: 100%; /* Changed to 100% for responsiveness */
-    margin-bottom: 30px; /* Added space between content for smaller screens */
+    width: 100%; 
+    margin-bottom: 30px; 
 }
 
 h3 {
