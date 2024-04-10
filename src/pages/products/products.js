@@ -8,7 +8,7 @@ import Advertisement from '../../components/advertisement/advertisement';
 const Products = () => {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(1); 
     const [productsPerPage] = useState(6); // Change this value according to preference
     const [query] = useSearchParams();
     const searchQuery = query.get("q");
@@ -25,7 +25,8 @@ const Products = () => {
         };
         fetchProducts().catch(console.error);
     }, [searchQuery]);
-
+     
+    // logic for pagination
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);

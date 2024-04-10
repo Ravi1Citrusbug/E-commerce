@@ -5,29 +5,34 @@ import { FakeStoreApi } from "../../../services/fake-store-api"
 import { Link ,useParams } from "react-router-dom"
 import { useCart } from '../../../context/cart'
 import { toast } from 'react-toastify';
-import { Item } from '../../../components/item/item'
-
-
 
 const Product =()=>{
     const [loading ,setLoading] = useState(true);
     const [product,setProduct] = useState([]);
     const { addToCart } = useCart()
     const { productId }  = useParams();
-     useEffect(()=>{
-        const fetchProduct = async ()=>{
-            setLoading(true)
-            const product = await FakeStoreApi.fetchProductById(productId);
-            setProduct(product)
-            setLoading(false)
 
-        }
-        fetchProduct().catch(console.error);
-     },[productId])
-     const handleAddToCart = () => {
+    const handleAddToCart = () => {
         addToCart(product);
         toast.success("Successfully Added to cart");
     }
+    const fetchProduct = async ()=>{
+        setLoading(true)
+        const product = await FakeStoreApi.fetchProductById(productId);
+        setProduct(product)
+        setLoading(false)
+
+    }
+
+     useEffect(()=>{
+        try {
+            fetchProduct();
+        }  
+        catch(error){
+            console.log(error)
+        }
+     },[productId])
+
      if(!loading && !product){
         return (  
             <div className="container">
@@ -39,21 +44,7 @@ const Product =()=>{
             </div>
         )
      }
-
-    //  logic for similar products
-    const all = async() =>{
-        const allProduct = await FakeStoreApi.fetchAllProducts()
-    }
-
-    
-    
-    const searchedProduct = product.title
-    console.log(searchedProduct)
-
-
-
     return (
-       <>
         <div className="container mar-res">
             {
                 loading ? (<div className={'loader'}></div>) : 
@@ -81,18 +72,6 @@ const Product =()=>{
                 )
             }
         </div>
-        {/* <div className="products my-5">
-                    <div className="grid">
-                        {loading ? (
-                            <div className="loading"></div>
-                        ) : (
-                            similarProducts.map((product) => (
-                                <Item key={product.id} data={product} addToCart={() => addToCart(product)} />
-                            ))
-                        )}
-                    </div>
-                </div> */}
-       </>
     )
 
 }

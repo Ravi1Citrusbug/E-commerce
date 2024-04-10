@@ -4,13 +4,16 @@ import { toast } from 'react-toastify';
 const Item = ({ data, addToCart }) => {
 
     const { id, image, title, price } = data
+
+    // handle function
     const handleAddToCart = () => {
+         // Handle the action when "add to cart button" is clicked.
         addToCart();
         toast.success("Successfully Added to cart");
     }
 
     const handleBuyNow = () => {
-        // Handle the action when "Buy Now" is clicked
+        // Handle the action when "Buy Now" is clicked.
         toast.info("Nice choice");
 
     }
